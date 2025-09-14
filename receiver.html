@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some site</title>
+
+    <script>
+        var post_message = function(e) {
+            var msg = JSON.parse(e.data);
+            if (msg.talkToCat) {
+                document.getElementById("hm").innerHTML = "Hi cute cat. I'm " + msg.name;
+            }
+        }
+
+        window.addEventListener("message", post_message, false);
+    </script>
+</head>
+<body>
+    <h2 id="hm">Cat ask you...<br>What's your name?</h2>
+    <img src="cat.png">
+</body>
+</html>     
